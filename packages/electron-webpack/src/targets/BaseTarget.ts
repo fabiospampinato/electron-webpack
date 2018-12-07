@@ -108,8 +108,12 @@ function configureDevelopmentPlugins(configurator: WebpackConfigurator) {
   const plugins = configurator.plugins
   configurator.config.optimization!!.namedModules = true
   plugins.push(new DefinePlugin({
+<<<<<<< HEAD
     __static: `"${path.join(configurator.projectDir, "static").replace(/\\/g, "\\\\")}"`,
     "process.env.NODE_ENV": configurator.isProduction ? "\"production\"" : "\"development\""
+=======
+    __static: `"${path.join(configurator.projectDir, configurator.staticSourceDirectory).replace(/\\/g, "\\\\")}"`
+>>>>>>> Added a `staticSourceDirectory` configuration option
   }))
 
   plugins.push(new HotModuleReplacementPlugin())
