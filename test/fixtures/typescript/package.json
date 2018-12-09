@@ -1,7 +1,0 @@
-{
-  "name": "Test",
-  "devDependencies": {
-    "electron-webpack-ts": "*",
-    "typescript": "*"
-  }
-}
