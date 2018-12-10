@@ -157,14 +157,7 @@ class BaseRendererTarget extends _BaseTarget().BaseTarget {
     configurator.debug("Add ExtractTextPlugin plugin");
     configurator.plugins.push(new MiniCssExtractPlugin({
       filename: `${configurator.type === "renderer-dll" ? "vendor" : "styles"}.css`
-    })); // https://github.com/electron-userland/electrify/issues/1
-
-    if (!configurator.isProduction) {
-      configurator.plugins.push(new (_webpack().DefinePlugin)({
-        "process.env.NODE_ENV": "\"development\""
-      }));
-    }
-
+    }));
     await _BaseTarget().BaseTarget.prototype.configurePlugins.call(this, configurator);
   }
 

@@ -13,7 +13,7 @@ const HmrClient = require("electron-webpack/out/electron-main-hmr/HmrClient").Hm
 
 
 new HmrClient(socketPath, module.hot, () => {
-  return;
+  return __webpack_hash__;
 }); 
 // __ts-babel@6.0.4
 //# sourceMappingURL=main-hmr.js.map

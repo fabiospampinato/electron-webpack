@@ -396,6 +396,8 @@ class WebpackConfigurator {
     const whiteListedModules = new Set(this.electronWebpackConfiguration.whiteListedModules || []);
 
     if (this.isRenderer) {
+      whiteListedModules.add("react");
+      whiteListedModules.add("react-dom");
       whiteListedModules.add("vue");
     }
 

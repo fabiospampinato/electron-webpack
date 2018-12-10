@@ -181,7 +181,8 @@ function configureDevelopmentPlugins(configurator) {
   const plugins = configurator.plugins;
   configurator.config.optimization.namedModules = true;
   plugins.push(new (_webpack().DefinePlugin)({
-    __static: `"${path.join(configurator.projectDir, configurator.staticSourceDirectory).replace(/\\/g, "\\\\")}"`
+    __static: `"${path.join(configurator.projectDir, configurator.staticSourceDirectory).replace(/\\/g, "\\\\")}"`,
+    "process.env.NODE_ENV": configurator.isProduction ? "\"production\"" : "\"development\""
   }));
   plugins.push(new (_webpack().HotModuleReplacementPlugin)());
 
