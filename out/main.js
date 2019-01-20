@@ -226,6 +226,7 @@ class WebpackConfigurator {
     this.staticSourceDirectory = this.electronWebpackConfiguration.staticSourceDirectory;
     this.commonSourceDirectory = this.electronWebpackConfiguration.commonSourceDirectory;
     this.commonDistDirectory = this.electronWebpackConfiguration.commonDistDirectory;
+    this.rendererTemplate = this.electronWebpackConfiguration.renderer && this.electronWebpackConfiguration.renderer.template || 'src/index.ejs';
   }
 
   get config() {

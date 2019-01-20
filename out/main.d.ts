@@ -22,6 +22,7 @@ export declare class WebpackConfigurator {
     readonly staticSourceDirectory: string;
     readonly commonSourceDirectory: string;
     readonly commonDistDirectory: string;
+    readonly rendererTemplate: string;
     readonly debug: any;
     private _configuration;
     readonly config: Configuration;
